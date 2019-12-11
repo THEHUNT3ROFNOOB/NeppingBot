@@ -97,7 +97,6 @@ client.on('message', async message => {
 	    } else {
 	    	ytSearch(sueur, function(err, r) {
 					if(err) return console.log(err);
-					// message.reply(r);
 			 		startsearch(message, r.videos[0].videoId, serverQueue);
 				});
 	    }
@@ -241,7 +240,6 @@ async function startsearch(message, search, serverQueue) {
 		return message.reply('Jai pas les permission suffisente pour lancer de la musique sur ce salon >o<');
 	}
 	const information = await ytdl.getInfo(search);
-	// console.log(information.videoDetails);
 	const music = {
 		title: information.title,
 		url: information.video_url,
